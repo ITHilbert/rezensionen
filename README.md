@@ -21,12 +21,16 @@ resources/scss/app.scss
 @import './rating.scss';
 ```
 
+## Rezensionen in blade einfügen
+```
+@include('rezensionen::show')
+```
+
 ## ToDo
-- Readme ausarbeiten :-)
 
 ## Author
 IT-Hilbert GmbH
 
-Access, Excel, VBA und Web Programmierungen
+Access, Excel, VBA und Web Programmierungen (Laravel)
 
 Homepage: [IT-Hilbert.com](https://www.IT-Hilbert.com) 

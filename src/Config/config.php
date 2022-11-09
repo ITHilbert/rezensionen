@@ -2,8 +2,12 @@
 
 return [
     'name' => 'Rezensionen',
-    'gesamt' => 2,
-    'durchschnitt' => 5,
+
+    'aggregateRating' => [
+        'ratingValue' => "5",
+        "bestRating" => "5",
+        "ratingCount" => "9"
+    ],
 
     'rezensionen' => [
         [
