@@ -5,15 +5,21 @@ Eine Komponente für meine Rezensionen.
 ## Vorraussetzungen
 Benötigt Bootstrap 4.
 
-
-
-## config/app.php
-Den Punkt Providers um folgenden Eintrag ergänzen:
+## Installation 
+Package installieren
 ```
-\ITHilbert\Rezensionen\RezensionenServiceProvider::class,
+composer require ithilbert/rezensionen
+```
+Daten kopieren
+```
+php artisan vendor:publish --provider="ITHilbert\Rezensionen\RezensionenServiceProvider"
 ```
 
-
+## Design übernehmen
+resources/scss/app.scss
+```
+@import './rating.scss';
+```
 
 ## ToDo
 - Readme ausarbeiten :-)

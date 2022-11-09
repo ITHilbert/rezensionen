@@ -18,7 +18,7 @@ class Rezension extends Model
 
 
     public static function getRezensionen(){
-        $rezensionen = config('rezension.rezensionen');
+        $rezensionen = config('rezensionen.rezensionen');
         $anz = 0;
         $ausgabe = '';
         foreach( $rezensionen as $rez){
