@@ -1,0 +1,39 @@
+{
+    "name": "ithilbert/rezensionen",
+    "type": "libary",
+    "license": "MIT",
+    "description": "Neues Package für Rezensionen",
+    "keywords": [
+        "it-hilbert",
+        "laravel",
+        "homepage"
+    ],
+    "authors": [{
+        "name": "Jörg Hilbert",
+        "homepage": "https://www.it-hilbert.com",
+        "role": "Developer"
+    }],
+    "homepage": "https://www.it-hilbert.com",
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "ITHilbert\\Rezensionen\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "ITHilbert\\Rezensionen\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "ITHilbert\\Rezensionen\\RezensionenServiceProvider"
+            ],
+            "aliases": {
+
+            }
+        }
+    }
+}
