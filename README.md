@@ -12,7 +12,7 @@ composer require ithilbert/rezensionen
 ```
 Daten kopieren
 ```
-php artisan vendor:publish --provider="ITHilbert\Rezensionen\RezensionenServiceProvider"
+php artisan vendor:publish --provider="ITHilbert\Rezensionen\RezensionenServiceProvider" --force
 ```
 
 ## Design übernehmen

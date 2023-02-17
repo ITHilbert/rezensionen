@@ -28,15 +28,13 @@ class Rezension extends Model
                 $ausgabe .= '<div class="carousel-item text-center">';
             }
             $ausgabe .= '<img src="'. asset('vendor/rezensionen/5-stars.png') .'" height="20" width="114" alt="5 Sterne">';
-            $ausgabe .= '<p class="text-black mt-2 rezension-text">';
+            $ausgabe .= '<p class="rezension-text">';
             $ausgabe .= $rez['rezension'];
             $ausgabe .= '</p>';
-            $ausgabe .= '<h5>'. $rez['author'].'</h5>';
+            $ausgabe .= '<div class="rezension-author">'. $rez['author'].'</div>';
             $ausgabe .= '</div>';
             $anz++;
         }
         return $ausgabe;
     }
-
-
 }
