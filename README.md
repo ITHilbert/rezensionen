@@ -1,36 +1,19 @@
-# Rezensionen
+# ITHilbert Rezensionen
 
-Eine Komponente für meine Rezensionen.
+**Beschreibung**: Neues Package für Rezensionen.
 
-## Vorraussetzungen
-Benötigt Bootstrap 4.
+## Dokumentation
 
-## Installation 
-Package installieren
-```
+Die ausführliche Dokumentation befindet sich im Ordner `docs/`:
+- [Kontext & Zielsetzung](docs/00_README_Kontext.md)
+- [Architekturübersicht](docs/01_Architekturübersicht.md)
+- [Modulstruktur](docs/07_Modulstruktur.md)
+
+## Installation
+
+```bash
 composer require ithilbert/rezensionen
 ```
-Daten kopieren
-```
-php artisan vendor:publish --provider="ITHilbert\Rezensionen\RezensionenServiceProvider" --force
-```
 
-## Design übernehmen
-resources/scss/app.scss
-```
-@import './rating.scss';
-```
-
-## Rezensionen in blade einfügen
-```
-@include('rezensionen::show')
-```
-
-## ToDo
-
-## Author
-IT-Hilbert GmbH
-
-Access, Excel, VBA und Web Programmierungen (Laravel)
-
-Homepage: [IT-Hilbert.com](https://www.IT-Hilbert.com) 
+## Namespace
+`ITHilbert\Rezensionen`
