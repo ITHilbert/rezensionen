@@ -20,7 +20,6 @@ class RezensionenServiceProvider extends ServiceProvider
         $this->publishAssets();
         $this->registerConfig();
         $this->registerTranslations();
-        $this->registerRoutes();
 
         /*
         $this->registerCommands();
@@ -84,17 +83,6 @@ class RezensionenServiceProvider extends ServiceProvider
             __DIR__ .'/Resources/assets' => public_path('vendor/rezensionen'),
             __DIR__ .'/Resources/scss/rating.scss' => resource_path('scss/rating.scss'),
         ]);
-    }
-
-
-    /**
-     * Register Routes.
-     *
-     * @return void
-     */
-    protected function registerRoutes()
-    {
-        $this->loadRoutesFrom(__DIR__ . '/Routes/web.php');
     }
 
 
