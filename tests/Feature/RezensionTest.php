@@ -108,11 +108,18 @@ final class RezensionTest extends TestCase
         $this->assertStringContainsString('carousel-control-next', $html);
     }
 
-    // Charakterisierung: Ohne gesetzte Config bricht die Ausgabe ab (siehe OFFEN-1 in BootTest)
-    public function test_get_rezensionen_ohne_config_wirft_fehler(): void
+    // Ohne veroeffentlichte Config greift die Vorlage (mergeConfigFrom) und es gibt keinen Fehler
+    public function test_get_rezensionen_ohne_veroeffentlichte_config_nutzt_config_vorlage(): void
     {
-        $this->expectException(\ErrorException::class);
+        $vorlage = require __DIR__.'/../../src/Config/config.php';
 
-        Rezension::getRezensionen();
+        $html = Rezension::getRezensionen();
+
+        $this->assertNotSame('', $html);
+        foreach ($vorlage['rezensionen'] as $eintrag) {
+            $this->assertStringContainsString($eintrag['author'], $html);
+            $this->assertStringContainsString($eintrag['rezension'], $html);
+        }
+        $this->assertSame(count($vorlage['rezensionen']), substr_count($html, 'carousel-item'));
     }
 }
