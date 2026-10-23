@@ -1,6 +1,6 @@
 {
     "name": "ithilbert/rezensionen",
-    "type": "libary",
+    "type": "library",
     "license": "MIT",
     "description": "Neues Package für Rezensionen",
     "keywords": [
@@ -8,14 +8,21 @@
         "laravel",
         "homepage"
     ],
-    "authors": [{
-        "name": "Jörg Hilbert",
-        "homepage": "https://www.it-hilbert.com",
-        "role": "Developer"
-    }],
+    "authors": [
+        {
+            "name": "Jörg Hilbert",
+            "homepage": "https://www.it-hilbert.com",
+            "role": "Developer"
+        }
+    ],
     "homepage": "https://www.it-hilbert.com",
     "minimum-stability": "dev",
-    "require": {},
+    "require": {
+        "php": "^8.5",
+        "illuminate/database": "^12.0 || ^13.0",
+        "illuminate/support": "^12.0 || ^13.0",
+        "illuminate/view": "^12.0 || ^13.0"
+    },
     "autoload": {
         "psr-4": {
             "ITHilbert\\Rezensionen\\": "src/"
@@ -23,7 +30,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "ITHilbert\\Rezensionen\\": "src/"
+            "ITHilbert\\Rezensionen\\Tests\\": "tests/"
         }
     },
     "extra": {
@@ -31,9 +38,11 @@
             "providers": [
                 "ITHilbert\\Rezensionen\\RezensionenServiceProvider"
             ],
-            "aliases": {
-
-            }
+            "aliases": {}
         }
+    },
+    "require-dev": {
+        "orchestra/testbench": "^10.0 || ^11.0",
+        "phpunit/phpunit": "^11.5 || ^12.0"
     }
 }

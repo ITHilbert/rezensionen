@@ -7,7 +7,6 @@ use Illuminate\View\Compilers\BladeCompiler;
 
 class RezensionenServiceProvider extends ServiceProvider
 {
-
     /**
      * Boot the application events.
      *
@@ -20,11 +19,11 @@ class RezensionenServiceProvider extends ServiceProvider
         $this->publishAssets();
         $this->registerConfig();
         $this->registerTranslations();
+        $this->loadMigrationsFrom(__DIR__.'/Database/Migrations');
 
         /*
         $this->registerCommands();
         $this->registerFactories();
-        $this->loadMigrationsFrom(__DIR__ . '/Database/Migrations');
         */
 
     }
@@ -36,7 +35,7 @@ class RezensionenServiceProvider extends ServiceProvider
      */
     public function registerViews()
     {
-        $this->loadViewsFrom(__DIR__ .'/Resources/views', 'rezensionen');
+        $this->loadViewsFrom(__DIR__.'/Resources/views', 'rezensionen');
     }
 
     /**
@@ -46,10 +45,8 @@ class RezensionenServiceProvider extends ServiceProvider
      */
     public function registerTranslations()
     {
-        $this->loadTranslationsFrom(__DIR__ .'/Resources/lang', 'rezensionen');
+        $this->loadTranslationsFrom(__DIR__.'/Resources/lang', 'rezensionen');
     }
-
-
 
     /**
      * Register commands.
@@ -67,10 +64,10 @@ class RezensionenServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function registerMiddleware(){
+    public function registerMiddleware()
+    {
         /* $this->app['router']->aliasMiddleware('MiddlewareName' , \ITHilbert\SITE\Http\Middleware\MiddlewareName::class); */
     }
-
 
     /**
      * Assets kopieren
@@ -80,11 +77,10 @@ class RezensionenServiceProvider extends ServiceProvider
     public function publishAssets()
     {
         $this->publishes([
-            __DIR__ .'/Resources/assets' => public_path('vendor/rezensionen'),
-            __DIR__ .'/Resources/scss/rating.scss' => resource_path('scss/rating.scss'),
+            __DIR__.'/Resources/assets' => public_path('vendor/rezensionen'),
+            __DIR__.'/Resources/scss/rating.scss' => resource_path('scss/rating.scss'),
         ]);
     }
-
 
     /**
      * Register the service provider.
@@ -93,8 +89,9 @@ class RezensionenServiceProvider extends ServiceProvider
      */
     public function register()
     {
-       /*  $this->app->register(RouteServiceProvider::class); */
-       /* $this->registerBladeExtensions(); */
+        $this->mergeConfigFrom(__DIR__.'/Config/config.php', 'rezensionen');
+        /*  $this->app->register(RouteServiceProvider::class); */
+        /* $this->registerBladeExtensions(); */
     }
 
     /**
@@ -105,13 +102,9 @@ class RezensionenServiceProvider extends ServiceProvider
     protected function registerConfig()
     {
         $this->publishes([
-            __DIR__ .'/Config/config.php' => config_path('rezensionen.php')
+            __DIR__.'/Config/config.php' => config_path('rezensionen.php'),
         ]);
     }
-
-
-
-
 
     /**
      * Register an additional directory of factories.
@@ -125,7 +118,6 @@ class RezensionenServiceProvider extends ServiceProvider
         } */
     }
 
-
     /**
      * Get the services provided by the provider.
      *
@@ -135,7 +127,6 @@ class RezensionenServiceProvider extends ServiceProvider
     {
         return [];
     }
-
 
     /**
      * Eigende Blade function (Directive)
