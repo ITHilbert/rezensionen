@@ -18,13 +18,15 @@ use ITHilbert\Rezensionen\Models\Rezension;
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="sr-only">Next</span>
             </a>
-            <button type="button" class="btn btn-sm btn-outline-secondary mt-2" data-rezensionen-pause
-                aria-controls="carouselExampleControls-inner"
-                aria-label="{{ __('rezensionen::rezensionen.slider_pause_label') }}"
-                data-label-pause="{{ __('rezensionen::rezensionen.slider_pause_label') }}"
-                data-label-play="{{ __('rezensionen::rezensionen.slider_play_label') }}"
-                data-text-pause="{{ __('rezensionen::rezensionen.slider_pause') }}"
-                data-text-play="{{ __('rezensionen::rezensionen.slider_play') }}">{{ __('rezensionen::rezensionen.slider_pause') }}</button>
+            <div class="position-relative text-center" style="z-index: 2;">
+                <button type="button" class="btn btn-sm btn-outline-secondary mt-2" data-rezensionen-pause
+                    aria-controls="carouselExampleControls-inner"
+                    aria-label="{{ __('rezensionen::rezensionen.slider_pause_label') }}"
+                    data-label-pause="{{ __('rezensionen::rezensionen.slider_pause_label') }}"
+                    data-label-play="{{ __('rezensionen::rezensionen.slider_play_label') }}"
+                    data-text-pause="{{ __('rezensionen::rezensionen.slider_pause') }}"
+                    data-text-play="{{ __('rezensionen::rezensionen.slider_play') }}">{{ __('rezensionen::rezensionen.slider_pause') }}</button>
+            </div>
         </div>
     </div>
 </div>
