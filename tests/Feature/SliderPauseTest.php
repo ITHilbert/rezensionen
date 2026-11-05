@@ -130,6 +130,27 @@ final class SliderPauseTest extends TestCase
         $this->assertFalse($knopf->hasAttribute('hidden'));
     }
 
+    // AK4
+    public function test_knopf_liegt_ueber_den_pfeilen_in_eigenem_element_im_slider(): void
+    {
+        $xp = $this->xpath($this->rendereShow());
+        $knopf = $this->knopf($xp);
+        $slider = $this->slider($xp);
+
+        // Gegenprobe: der Knopf steht weiter innerhalb von #carouselExampleControls
+        $this->assertSame(1, $xp->query('ancestor::*[@id="carouselExampleControls"]', $knopf)->length);
+
+        $eltern = $knopf->parentNode;
+        $this->assertInstanceOf(DOMElement::class, $eltern);
+        $this->assertFalse($eltern->isSameNode($slider), 'Der Knopf braucht ein eigenes Elternelement unterhalb des Sliders');
+        $this->assertSame(1, $xp->query('ancestor::*[@id="carouselExampleControls"]', $eltern)->length);
+
+        $klassen = preg_split('/\s+/', trim($eltern->getAttribute('class'))) ?: [];
+        $this->assertContains('position-relative', $klassen);
+        $this->assertSame(1, preg_match('/z-index\s*:\s*(\d+)/', $eltern->getAttribute('style'), $m), 'z-index im style erwartet');
+        $this->assertGreaterThanOrEqual(2, (int) $m[1]);
+    }
+
     // AK2
     public function test_carousel_inner_hat_id_und_aria_live_off(): void
     {
