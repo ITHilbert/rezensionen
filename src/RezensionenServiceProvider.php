@@ -2,6 +2,7 @@
 
 namespace ITHilbert\Rezensionen;
 
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\View\Compilers\BladeCompiler;
 
@@ -36,6 +37,11 @@ class RezensionenServiceProvider extends ServiceProvider
     public function registerViews()
     {
         $this->loadViewsFrom(__DIR__.'/Resources/views', 'rezensionen');
+
+        // Skriptinhalt für die Inline-Ausgabe in rezensionen::show (kein Publish/Build im Host nötig)
+        View::composer('rezensionen::show', function ($view) {
+            $view->with('rezensionenSliderSkript', trim((string) file_get_contents(__DIR__.'/Resources/js/slider.js')));
+        });
     }
 
     /**

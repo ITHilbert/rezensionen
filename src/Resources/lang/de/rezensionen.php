@@ -11,6 +11,11 @@ return [
     | these language lines according to your application's requirements.
     |
     */
-    'btn-back'   => 'Zurück',
+    'btn-back' => 'Zurück',
+
+    'slider_pause_label' => 'Bewertungen anhalten',
+    'slider_play_label' => 'Bewertungen abspielen',
+    'slider_pause' => 'Anhalten',
+    'slider_play' => 'Abspielen',
 
 ];
