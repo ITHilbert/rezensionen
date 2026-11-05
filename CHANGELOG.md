@@ -1,6 +1,6 @@
 # Changelog
 
-## [Unreleased]
+## [1.1.0] – 2026-11-05
 
 ### Hinzugefügt
 - Slider `rezensionen::show`: Pause bei Fokus. Hält der Fokus im Slider, pausiert er und `aria-live` wechselt auf `polite`. Verlässt der Fokus den Slider, läuft er wieder, außer er wurde über den Knopf angehalten (WCAG 2.2.2, #712).
