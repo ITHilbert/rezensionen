@@ -15,6 +15,10 @@ Die ausführliche Dokumentation befindet sich im Ordner `.project/doku/`:
 composer require ithilbert/rezensionen
 ```
 
+### Update
+
+Nach `composer update ithilbert/rezensionen` sind im Host keine Schritte nötig (kein `vendor:publish`, kein Build).
+
 ## Namespace
 `ITHilbert\Rezensionen`
 
@@ -27,4 +31,5 @@ Der Slider (`rezensionen::show`) hält nach WCAG 2.2.2 an, wenn der Nutzer es br
 - **Knopf:** „Anhalten“/„Abspielen“ (`data-rezensionen-pause`) hält den Slider an und startet ihn wieder.
 - **Texte:** kommen aus der Sprachdatei `rezensionen::rezensionen` (`slider_pause_label`, `slider_play_label`, `slider_pause`, `slider_play`) und lassen sich dort überschreiben.
 - **Skript:** `src/Resources/js/slider.js` wird einmal je Seite inline ausgegeben, kein `vendor:publish` und kein Build nötig.
+- **Content-Security-Policy:** Das Skript ist ein Inline-`<script>` ohne Nonce. Eine strikte CSP ohne `unsafe-inline` blockiert es; dann fehlen Pause bei Fokus und Knopf vollständig; der Slider läuft wie ohne Skript weiter.
 - **Voraussetzung:** Bootstrap 4 und jQuery (`$.fn.carousel`). Fehlt das Plugin, wechselt nur der Knopf seinen Zustand, es gibt keinen Fehler.
