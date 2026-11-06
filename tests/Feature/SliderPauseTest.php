@@ -127,7 +127,7 @@ final class SliderPauseTest extends TestCase
         $this->assertNotContains('d-none', $klassen);
         $this->assertSame(0, $xp->query('ancestor::*[contains(concat(" ", normalize-space(@class), " "), " d-none ")]', $knopf)->length);
         $this->assertStringNotContainsString('display:none', str_replace(' ', '', $knopf->getAttribute('style')));
-        $this->assertFalse($knopf->hasAttribute('hidden'));
+        // `hidden` im Markup ist erlaubt (AK11): das Skript entfernt es, sichtbar gilt mit laufendem Skript
     }
 
     // AK4
