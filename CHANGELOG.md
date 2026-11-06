@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## [1.2.0] – 2026-11-06
 
 ### Hinzugefügt
 - Config `rezensionen.skript_inline` (`REZENSIONEN_SKRIPT_INLINE`, Standard `true`) und Blade-Komponente `<x-rezensionen::skript />` für Hosts mit Vue-Root um die Seite (#755).
