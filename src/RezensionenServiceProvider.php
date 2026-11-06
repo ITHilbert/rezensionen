@@ -2,6 +2,7 @@
 
 namespace ITHilbert\Rezensionen;
 
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\View\Compilers\BladeCompiler;
@@ -38,8 +39,11 @@ class RezensionenServiceProvider extends ServiceProvider
     {
         $this->loadViewsFrom(__DIR__.'/Resources/views', 'rezensionen');
 
-        // Skriptinhalt für die Inline-Ausgabe in rezensionen::show (kein Publish/Build im Host nötig)
-        View::composer('rezensionen::show', function ($view) {
+        // Komponente <x-rezensionen::skript /> (Skript unabhängig von skript_inline ausgeben)
+        Blade::anonymousComponentPath(__DIR__.'/Resources/views/components', 'rezensionen');
+
+        // Skriptinhalt für die Ausgabe der Komponente (kein Publish/Build im Host nötig)
+        View::composer(['rezensionen::skript', 'rezensionen::components.skript'], function ($view) {
             $view->with('rezensionenSliderSkript', trim((string) file_get_contents(__DIR__.'/Resources/js/slider.js')));
         });
     }

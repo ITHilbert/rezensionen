@@ -19,7 +19,7 @@ use ITHilbert\Rezensionen\Models\Rezension;
                 <span class="sr-only">Next</span>
             </a>
             <div class="position-relative text-center" style="z-index: 2;">
-                <button type="button" class="btn btn-sm btn-outline-secondary mt-2" data-rezensionen-pause
+                <button type="button" class="btn btn-sm btn-outline-secondary mt-2" data-rezensionen-pause hidden
                     aria-controls="carouselExampleControls-inner"
                     aria-label="{{ __('rezensionen::rezensionen.slider_pause_label') }}"
                     data-label-pause="{{ __('rezensionen::rezensionen.slider_pause_label') }}"
@@ -31,6 +31,6 @@ use ITHilbert\Rezensionen\Models\Rezension;
     </div>
 </div>
 
-@once
-<script>{!! $rezensionenSliderSkript !!}</script>
-@endonce
+@if (config('rezensionen.skript_inline'))
+<x-rezensionen::skript />
+@endif
