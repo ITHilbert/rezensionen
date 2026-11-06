@@ -1,5 +1,13 @@
 # Changelog
 
+## Unreleased
+
+### Hinzugefügt
+- Config `rezensionen.skript_inline` (`REZENSIONEN_SKRIPT_INLINE`, Standard `true`) und Blade-Komponente `<x-rezensionen::skript />` für Hosts mit Vue-Root um die Seite (#755).
+
+### Geändert
+- Slider-Skript bindet `focusin`, `focusout` und `click` per Delegation an `document` und übersteht neues Markup; der Knopf ist im Markup `hidden` und wird vom Skript eingeblendet (#755).
+
 ## [1.1.0] – 2026-11-05
 
 ### Hinzugefügt
