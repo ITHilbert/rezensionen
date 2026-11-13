@@ -23,7 +23,9 @@ Vue-Control
 
 .carousel-item {
     padding-left: 5%;
+    padding-left: unquote("max(5%, 44px)");
     padding-right: 5%;
+    padding-right: unquote("max(5%, 44px)");
     text-decoration: none;
     min-width: 100%;
 }
@@ -31,7 +33,7 @@ Vue-Control
 .carousel-control-prev,
 .carousel-control-next {
     text-decoration: none;
-    width: 5%;
+    width: 44px;
 }
 
 .carousel-control-prev-icon {
