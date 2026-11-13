@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.2.1] – 2026-11-13
+
+### Geändert
+- Carousel-Steuerpfeile mindestens 44 px breit (Tippfläche, WCAG 2.5.8). Carousel-Inhalt mit seitlichem Innenpolster, damit der Text nicht unter die Pfeile läuft (#1268).
+
+### Hinweis für Hosts
+- SCSS im Host neu kompilieren (`npm run production`), damit die geänderten Pfeil- und Polsterwerte greifen.
+
 ## [1.2.0] – 2026-11-06
 
 ### Hinzugefügt
